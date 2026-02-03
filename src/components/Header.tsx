@@ -25,7 +25,7 @@ export default function Header() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <a href="#home" className="flex items-center gap-3">
-            <img src={logo} alt="Shashank Car Detailing" className="h-12 md:h-16 w-auto" />
+            <img src={logo} alt="Shashank Car Detailing" className="h-18  w-60"/>
           </a>
 
           {/* Desktop Navigation */}
@@ -46,7 +46,7 @@ export default function Header() {
           <div className="hidden md:flex items-center gap-6">
             <a href="tel:9506050605" className="flex items-center gap-2 text-foreground/80 hover:text-primary transition-colors">
               <Phone size={18} className="text-primary" />
-              <span className="font-display text-sm tracking-wider">95 06 05 06 05</span>
+              <span className="font-display text-sm tracking-wider">9506050605</span>
             </a>
             <a href="#contact" className="btn-primary text-sm">
               Book Now

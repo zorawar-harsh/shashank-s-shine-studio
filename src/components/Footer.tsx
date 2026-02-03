@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Instagram, Youtube, Star, Phone, Mail, MapPin } from 'lucide-react';
 import logo from '@/assets/logo.png';
+// Example if using Lucide React
 
 export default function Footer() {
   return (
@@ -16,7 +17,7 @@ export default function Footer() {
             </p>
             <div className="flex gap-3">
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/_shashank_car_detailing/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="social-btn"
@@ -25,7 +26,7 @@ export default function Footer() {
                 <Instagram size={18} />
               </a>
               <a
-                href="https://youtube.com"
+                href="https://www.youtube.com/@shashanksinghpukhray"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="social-btn"
@@ -98,12 +99,12 @@ export default function Footer() {
               <li>
                 <a href="mailto:info@shashankdetailing.com" className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors text-sm">
                   <Mail size={16} className="text-primary" />
-                  info@shashankdetailing.com
+                  mr.shashanksingh@gmail.com
                 </a>
               </li>
               <li className="flex items-start gap-3 text-muted-foreground text-sm">
                 <MapPin size={16} className="text-primary flex-shrink-0 mt-0.5" />
-                Near City Center, Main Road, Your City
+                Near NandLal Chauraha, Govind Nagar Kanpur.
               </li>
             </ul>
           </div>

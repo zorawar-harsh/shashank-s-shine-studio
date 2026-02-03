@@ -13,6 +13,8 @@ const services = [
 ];
 
 export default function ContactSection() {
+
+
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
   const [formData, setFormData] = useState({
@@ -32,12 +34,22 @@ export default function ContactSection() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+
+    const message = `
+      Hello, I would like to book an appointment.
+      Name: ${formData.name}
+      Phone: ${formData.phone}
+      Email: ${formData.email}
+      Service: ${formData.service}
+      Preferred Date: ${formData.date}
+      Message: ${formData.message}
+    `.trim().replace(/\s+/g, ' ');
+
+    const whatsappUrl = `https://wa.me/+919506050605?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
     
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    toast.success('Booking request submitted!', {
-      description: 'We will contact you shortly to confirm your appointment.',
+    toast.success('Redirecting to WhatsApp...', {
+      description: 'Please complete your booking there.',
     });
     
     setFormData({
@@ -74,7 +86,7 @@ export default function ContactSection() {
           <div className="line-accent w-24 mx-auto mt-6" />
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 gap-12 ">
           {/* Contact Info */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
@@ -106,11 +118,9 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <h4 className="font-display text-lg font-semibold mb-1">Visit Us</h4>
-                  <p className="text-muted-foreground">
-                    Near City Center, Main Road
-                    <br />
-                    Your City, State 000000
-                  </p>
+                  <iframe 
+                  className='h-[225px] lg:w-[400px] '
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3572.2575487197205!2d80.30614067571287!3d26.44742587692753!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399c47053dcbbb97%3A0x6891a56ce9112f8e!2sShashank%20Car%20Detailing!5e0!3m2!1sen!2sin!4v1770102056692!5m2!1sen!2sin" ></iframe>
                 </div>
               </div>
             </div>
@@ -129,43 +139,6 @@ export default function ContactSection() {
                   </p>
                 </div>
               </div>
-            </div>
-
-            {/* Social Links */}
-            <div className="glass-card p-6">
-              <h4 className="font-display text-lg font-semibold mb-4">Follow Us</h4>
-              <div className="flex gap-4">
-                <a
-                  href="https://instagram.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="social-btn"
-                  aria-label="Instagram"
-                >
-                  <Instagram size={20} />
-                </a>
-                <a
-                  href="https://youtube.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="social-btn"
-                  aria-label="YouTube"
-                >
-                  <Youtube size={20} />
-                </a>
-                <a
-                  href="https://google.com/maps"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="social-btn"
-                  aria-label="Google Reviews"
-                >
-                  <Star size={20} />
-                </a>
-              </div>
-              <p className="text-xs text-muted-foreground mt-4">
-                Check out our work and leave a review!
-              </p>
             </div>
           </motion.div>
 
@@ -265,6 +238,7 @@ export default function ContactSection() {
 
                 <button
                   type="submit"
+                  
                   disabled={isSubmitting}
                   className="btn-primary w-full flex items-center justify-center gap-2 disabled:opacity-50"
                 >

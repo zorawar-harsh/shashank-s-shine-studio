@@ -1,17 +1,23 @@
 import { motion } from 'framer-motion';
 import { ChevronDown, Sparkles } from 'lucide-react';
-import Car3D from './Car3D';
+import background from '@/assets/background.mp4'; 
 
 export default function HeroSection() {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background gradient */}
-      <div className="absolute inset-0 hero-gradient" />
+      {/* Background Video */}
+      <video
+        autoPlay
+        loop
+        muted
+        className="absolute z-0 w-auto min-w-full min-h-full max-w-none"
+      >
+        <source src={background} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
+      {/* Background gradient overlay */}
       
-      {/* 3D Car */}
-      <div className="absolute inset-0 z-0">
-        <Car3D />
-      </div>
       
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 pt-24 pb-12">
@@ -22,10 +28,6 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="mb-6"
           >
-            <span className="inline-flex items-center gap-2 bg-primary/10 border border-primary/30 rounded-full px-4 py-2 text-sm font-display tracking-wider text-primary">
-              <Sparkles size={16} />
-              Premium Car Care
-            </span>
           </motion.div>
           
           <motion.h1
