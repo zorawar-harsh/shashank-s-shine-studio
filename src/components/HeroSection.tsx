@@ -1,18 +1,17 @@
 import { motion } from 'framer-motion';
-import { ChevronDown, Sparkles } from 'lucide-react';
-import background from '@/assets/background.mp4'; 
+import { ChevronDown } from 'lucide-react';
 
 export default function HeroSection() {
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="home" className="relative w-full h-screen flex items-center justify-center overflow-hidden">
       {/* Background Video */}
       <video
         autoPlay
         loop
         muted
-        className="absolute z-0 w-auto min-w-full min-h-full max-w-none"
+        className="absolute z-0 w-full h-full object-cover"
       >
-        <source src={background} type="video/mp4" />
+        <source src="https://res.cloudinary.com/ddwdo7ptb/video/upload/v1770286076/background_zzpnkx.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
@@ -20,7 +19,7 @@ export default function HeroSection() {
       
       
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 pt-24 pb-12">
+      <div className="relative z-10 container mx-auto px-4 flex items-center justify-center h-full">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
