@@ -13,7 +13,7 @@ export default function Footer() {
             <img src={logo} alt="Shashank Car Detailing" className="h-12 sm:h-14 lg:h-16 w-auto mb-3 sm:mb-4" />
             <p className="text-xs sm:text-sm text-muted-foreground mb-4 sm:mb-6">
               Premium car detailing services that bring out the true beauty of your vehicle. 
-              Quality, precision, and excellence in every detail.
+              Quality, precision, and excellence in every detail...
             </p>
             <div className="flex gap-2 sm:gap-3">
               <a
