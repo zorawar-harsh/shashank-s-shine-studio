@@ -3,7 +3,7 @@ import { ChevronDown } from 'lucide-react';
 
 export default function HeroSection() {
   return (
-    <section id="home" className="relative w-full h-screen flex items-center justify-center overflow-hidden">
+    <section id="home" className="relative  w-full h-screen flex items-center justify-center overflow-hidden">
       {/* Background Video */}
       <video
         autoPlay
@@ -11,7 +11,7 @@ export default function HeroSection() {
         muted
         className="absolute z-0 w-full h-full object-cover"
       >
-        <source src="https://res.cloudinary.com/ddwdo7ptb/video/upload/v1770286076/background_zzpnkx.mp4" type="video/mp4" />
+        <source src="https://res.cloudinary.com/ddwdo7ptb/video/upload/v1770353123/background_xfl7c9.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
